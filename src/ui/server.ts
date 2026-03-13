@@ -1663,8 +1663,8 @@ export function startUiServer(port: number, toolClient: ToolClient): Server {
     }
   });
 
-  server.listen(port, "127.0.0.1", () => {
-    console.log(`[mission-control] ui listening at http://127.0.0.1:${port}`);
+  server.listen(port, "0.0.0.0", () => {
+    console.log(`[mission-control] ui listening at http://0.0.0.0:${port}`);
     void primeUiRenderCaches(toolClient);
   });
   return server;
